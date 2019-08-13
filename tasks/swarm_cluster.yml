@@ -101,7 +101,7 @@
     - skip_ansible_lint
     - swarm_labels
 
-- name: Remove labels from swarm node
+- name: Remove labels from swarm node1
   command: docker node update --label-rm {{ item }} {{ ansible_hostname }}
   with_items: "{{ docker_swarm_labels.stdout_lines }}"
   when: item not in swarm_labels
